@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">ස්මාර්ට් කෘෂි සම්බන්ධතාව</string>
+    <string name="dashboard">පාලන පුවරුව</string>
+    <string name="disease_detection">රෝග හඳුනාගැනීම</string>
+    <string name="alerts">අනතුරු ඇඟවීම්</string>
+    <string name="settings">සැකසුම්</string>
+    <string name="temperature">උෂ්ණත්වය</string>
+    <string name="humidity">ආර්ද්රතාව</string>
+    <string name="soil_moisture">පස් තෙතමනය</string>
+    <string name="capture_photo">ඡායාරූපය ගන්න</string>
+    <string name="retake_photo">නැවත ගන්න</string>
+    <string name="connect">සම්බන්ධ කරන්න</string>
+    <string name="disconnect">විසන්ධි කරන්න</string>
+    <string name="connection_status">සම්බන්ධතා තත්ත්වය</string>
+</resources>

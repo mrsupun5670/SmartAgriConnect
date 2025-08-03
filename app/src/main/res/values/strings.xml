@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">SmartAgriConnect</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="disease_detection">Disease Detection</string>
+    <string name="alerts">Alerts</string>
+    <string name="settings">Settings</string>
+    <string name="temperature">Temperature</string>
+    <string name="humidity">Humidity</string>
+    <string name="soil_moisture">Soil Moisture</string>
+    <string name="capture_photo">Capture Photo</string>
+    <string name="retake_photo">Retake Photo</string>
+    <string name="connect">Connect</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="connection_status">Connection Status</string>
+
+</resources>

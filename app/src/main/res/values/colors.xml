@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors -->
+    <color name="primary">#6366F1</color>
+    <color name="primary_variant">#4F46E5</color>
+    <color name="secondary">#10B981</color>
+    <color name="secondary_variant">#059669</color>
+
+    <!-- Background Colors -->
+    <color name="background_primary">#FAFAFA</color>
+    <color name="background_secondary">#FFFFFF</color>
+    <color name="surface">#FFFFFF</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#1F2937</color>
+    <color name="text_secondary">#6B7280</color>
+    <color name="text_hint">#9CA3AF</color>
+    <color name="text_on_primary">#FFFFFF</color>
+
+    <!-- Bottom Navigation Colors -->
+    <color name="bottom_nav_selected">#6366F1</color>
+    <color name="bottom_nav_unselected">#9CA3AF</color>
+
+    <!-- Status Colors -->
+    <color name="error">#EF4444</color>
+    <color name="warning">#F59E0B</color>
+    <color name="success">#10B981</color>
+    <color name="info">#3B82F6</color>
+
+    <!-- Card and Elevation -->
+    <color name="card_background">#FFFFFF</color>
+    <color name="divider">#E5E7EB</color>
+    <color name="shadow">#0D000000</color>
+
+    <!-- Dark Theme -->
+    <color name="background_primary_dark">#111827</color>
+    <color name="background_secondary_dark">#1F2937</color>
+    <color name="surface_dark">#374151</color>
+    <color name="text_primary_dark">#F9FAFB</color>
+    <color name="text_secondary_dark">#D1D5DB</color>
+</resources>
