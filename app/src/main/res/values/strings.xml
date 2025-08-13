@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SmartAgriConnect</string>
+    <string name="app_name">Smart Agro</string>
     <string name="dashboard">Dashboard</string>
     <string name="disease_detection">Disease Detection</string>
     <string name="alerts">Alerts</string>

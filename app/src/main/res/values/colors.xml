@@ -18,7 +18,7 @@
     <color name="text_on_primary">#FFFFFF</color>
 
     <!-- Bottom Navigation Colors -->
-    <color name="bottom_nav_selected">#6366F1</color>
+    <color name="bottom_nav_selected">#4CC417</color>
     <color name="bottom_nav_unselected">#9CA3AF</color>
 
     <!-- Status Colors -->
@@ -38,4 +38,22 @@
     <color name="surface_dark">#374151</color>
     <color name="text_primary_dark">#F9FAFB</color>
     <color name="text_secondary_dark">#D1D5DB</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue">#03A9F4</color>
+    <color name="gray">#B0BEC5</color>
+    <color name="green">#054712</color>
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+
+    <!-- Custom colors for the report -->
+    <color name="teal_green">#FF66CC99</color>
+    <color name="light_gray">#FFF5F5F5</color>
+    <color name="light_green">#C9EDBC</color>
+    <color name="dark_green">#FF4D9966</color>
+    <color name="button_gray">#FFE0E0E0</color>
 </resources>

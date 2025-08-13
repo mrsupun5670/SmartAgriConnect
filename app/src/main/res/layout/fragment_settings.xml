@@ -1,9 +1,188 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.SettingsFragment">
 
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginBottom="43dp"
+        android:fontFamily="@font/cascadia"
+        android:text="Settings"
+        android:textColor="@color/text_primary"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/signed_user_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="46dp"
+        android:text="Hi."
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/language"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:drawableLeft="@drawable/lan"
+        android:drawablePadding="15dp"
+        android:gravity="center|left"
+        android:paddingLeft="10dp"
+        android:text="Language"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.006"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/left_line6" />
+
+    <TextView
+        android:id="@+id/Signed_Logout"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:drawableLeft="@drawable/logout"
+        android:drawablePadding="15dp"
+        android:gravity="center|left"
+        android:paddingLeft="10dp"
+        android:text="Logout"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/language" />
+
+    <TextView
+        android:id="@+id/signed_user_name2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="______"
+        android:textColor="@color/green"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView21"
+        app:layout_constraintStart_toEndOf="@+id/signed_user_name"
+        app:layout_constraintTop_toTopOf="@+id/textView21"
+        app:layout_constraintVertical_bias="0.6" />
+
+    <TextView
+        android:id="@+id/signed_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="______"
+        android:textColor="@color/green"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView21"
+        app:layout_constraintStart_toEndOf="@+id/textView21"
+        app:layout_constraintTop_toTopOf="@+id/textView21"
+        app:layout_constraintVertical_bias="0.6" />
+
+    <View
+        android:id="@+id/left_line7"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#B0B0B0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signed_user_name" />
+
+    <View
+        android:id="@+id/left_line8"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#B0B0B0"
+        app:layout_constraintBottom_toTopOf="@+id/Signed_Logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/language"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/left_line9"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#B0B0B0"
+        app:layout_constraintBottom_toBottomOf="@+id/Signed_Logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"/>
+
+    <TextView
+        android:id="@+id/Signed_about"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:drawableLeft="@drawable/about"
+        android:drawablePadding="15dp"
+        android:gravity="center|left"
+        android:lineSpacingExtra="14sp"
+        android:paddingStart="10dp"
+        android:text="About"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/left_line6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signed_user_name"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/left_line6"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#B0B0B0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Signed_about" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/customSwitch"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_margin="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/switch_background"
+        android:padding="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/Signed_Logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.811"
+        app:layout_constraintStart_toEndOf="@+id/language"
+        app:layout_constraintTop_toBottomOf="@+id/Signed_about"
+        app:layout_constraintVertical_bias="0.619">
+
+        <TextView
+            android:id="@+id/switchText"
+            android:layout_width="26dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/switch_knob"
+            android:gravity="center"
+            android:text="A"
+            android:textColor="#000"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
