@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Main Image Area -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="8dp"
+            app:cardUseCompatPadding="true">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/image_description"
+                tools:src="@drawable/abc" />
+
+            <!-- Overlay gradient for better text readability if needed -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/gradient_bottom" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="88dp"
+                android:layout_height="37dp"
+                android:layout_gravity="right"
+                android:background="@android:drawable/editbox_background" />
+
+            <TextView
+                android:id="@+id/confidenceTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:text="TextView"
+                android:textColor="@color/secondary"
+                android:textStyle="bold" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Content Container -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Image Name/Title -->
+            <TextView
+                android:id="@+id/textImageNameEn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/image_name_placeholder"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="16dp"
+                tools:text="Beautiful Sunset" />
+            <TextView
+                android:id="@+id/textImageNameSi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/image_name_placeholder"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="16dp"
+                tools:text="Beautiful Sunset" />
+
+            <!-- Divider Line -->
+            <View
+                android:layout_width="60dp"
+                android:layout_height="3dp"
+                android:background="@color/accent_color"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Description Area -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/card_background"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- Description Label -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/description_label"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_secondary"
+                        android:textAllCaps="true"
+                        android:letterSpacing="0.1"
+                        android:layout_marginBottom="12dp"
+                        tools:text="DESCRIPTION" />
+
+                    <!-- Description Text -->
+                    <TextView
+                        android:id="@+id/textDescriptionEn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/description_placeholder"
+                        android:textSize="16sp"
+                        android:textColor="@color/text_primary"
+                        android:lineSpacingExtra="6dp"
+                        android:justificationMode="inter_word"
+                        tools:text="This is a beautiful sunset captured during golden hour. The warm colors blend seamlessly across the sky, creating a peaceful and serene atmosphere that brings tranquility to anyone who views it." />
+                    <TextView
+                        android:id="@+id/textDescriptionSi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/description_placeholder"
+                        android:textSize="16sp"
+                        android:paddingTop="10dp"
+                        android:textColor="@color/text_primary"
+                        android:lineSpacingExtra="6dp"
+                        android:justificationMode="inter_word"
+                        tools:text="This is a beautiful sunset captured during golden hour. The warm colors blend seamlessly across the sky, creating a peaceful and serene atmosphere that brings tranquility to anyone who views it." />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Additional spacing at bottom -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="24dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

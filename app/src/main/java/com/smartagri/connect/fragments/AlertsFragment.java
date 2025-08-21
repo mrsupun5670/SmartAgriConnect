@@ -1,13 +1,13 @@
 package com.smartagri.connect.fragments;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.fragment.app.Fragment;
+
+import com.smartagri.connect.BaseFragment;
 import com.smartagri.connect.R;
 
 /**
@@ -15,7 +15,7 @@ import com.smartagri.connect.R;
  * Use the {@link AlertsFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AlertsFragment extends Fragment {
+public class AlertsFragment extends BaseFragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER

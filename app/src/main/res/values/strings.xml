@@ -12,5 +12,27 @@
     <string name="connect">Connect</string>
     <string name="disconnect">Disconnect</string>
     <string name="connection_status">Connection Status</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="image_description">Main image display</string>
+    <string name="image_name_placeholder">Image Name</string>
+    <string name="description_label">Description</string>
+    <string name="description_placeholder">Add your image description here...</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="login">Login</string>
+    <string name="don_t_have_an_account_sign_up">Don\'t have an account? Sign Up</string>
+    <string name="create_account">Create Account</string>
+    <string name="full_name">Full Name</string>
+    <string name="already_have_an_account_login">Already have an account? Login</string>
+    <string name="here_s_what_s_happening_today">Here\'s what\'s happening today</string>
+    <string name="this_time">This Time</string>
+    <string name="recent_activity">Recent Activity</string>
+    <string name="item_scanned_successfully">Item scanned successfully</string>
+    <string name="language">Language</string>
+    <string name="logout">Logout</string>
+    <string name="about">About</string>
+    <string name="scan">Scan</string>
 
 </resources>

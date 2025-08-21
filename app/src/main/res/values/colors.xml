@@ -56,4 +56,7 @@
     <color name="light_green">#C9EDBC</color>
     <color name="dark_green">#FF4D9966</color>
     <color name="button_gray">#FFE0E0E0</color>
+
+    <color name="background_light">#FAFAFA</color>
+    <color name="accent_color">#FF5722</color>
 </resources>

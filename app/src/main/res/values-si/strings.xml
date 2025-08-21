@@ -12,4 +12,25 @@
     <string name="connect">සම්බන්ධ කරන්න</string>
     <string name="disconnect">විසන්ධි කරන්න</string>
     <string name="connection_status">සම්බන්ධතා තත්ත්වය</string>
+    <string name="image_description">ප්‍රධාන රූපය</string>
+    <string name="image_name_placeholder">රූප නාමය</string>
+    <string name="description_label">විස්තරය</string>
+    <string name="description_placeholder">ඔබේ රූප විස්තරය මෙහි එක් කරන්න...</string>
+    <string name="welcome_back">ආපසු සාදරයෙන් පිළිගනිමු</string>
+    <string name="email_address">ඊමේල් ලිපිනය</string>
+    <string name="password">මුරපදය</string>
+    <string name="forgot_password">මුරපදය අමතකවුණාද?</string>
+    <string name="login">ඇතුල් වන්න</string>
+    <string name="don_t_have_an_account_sign_up">ගිණුමක් නැද්ද? ලියාපදිංචි වන්න</string>
+    <string name="create_account">ගිණුමක් සාදන්න</string>
+    <string name="full_name">සම්පූර්ණ නම</string>
+    <string name="already_have_an_account_login">දැනටමත් ගිණුමක් තිබේද? ඇතුල් වන්න</string>
+    <string name="here_s_what_s_happening_today">අද සිදු වන දේ මෙන්න</string>
+    <string name="this_time">මෙම වේලාව</string>
+    <string name="recent_activity">මෑත ක්‍රියාකාරකම්</string>
+    <string name="item_scanned_successfully">අයිතමය සාර්ථකව ස්කෑන් කරන ලදි</string>
+    <string name="language">භාෂාව</string>
+    <string name="logout">නික්ම යන්න</string>
+    <string name="about">අප ගැන</string>
+    <string name="scan">සොයන්න</string>
 </resources>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:background="@color/background_primary"
     tools:context=".fragments.DashboardFragment">
 
@@ -22,7 +23,7 @@
                 android:id="@+id/tv_welcome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Welcome back!"
+                android:text="@string/welcome_back"
                 android:textColor="@color/text_primary"
                 android:textSize="28sp"
                 android:textStyle="bold"
@@ -32,7 +33,7 @@
                 android:id="@+id/tv_subtitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Here's what's happening today"
+                android:text="@string/here_s_what_s_happening_today"
                 android:textColor="@color/text_secondary"
                 android:textSize="16sp"
                 android:layout_marginBottom="24dp" />
@@ -71,7 +72,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Temperature"
+                            android:text="@string/temperature"
                             android:textColor="@color/text_on_primary"
                             android:textSize="14sp"
                             android:textStyle="bold" />
@@ -106,7 +107,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Humidity"
+                            android:text="@string/humidity"
                             android:textColor="@color/text_on_primary"
                             android:textSize="14sp"
                             android:textStyle="bold" />
@@ -133,7 +134,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="This Time"
+                        android:text="@string/this_time"
                         android:textColor="@color/text_primary"
                         android:textSize="18sp"
                         android:textStyle="bold"
@@ -163,7 +164,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Temperature"
+                                android:text="@string/temperature"
                                 android:textColor="@color/text_secondary"
                                 android:textSize="12sp" />
 
@@ -189,7 +190,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Humidity"
+                                android:text="@string/humidity"
                                 android:textColor="@color/text_secondary"
                                 android:textSize="12sp" />
 
@@ -218,7 +219,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Recent Activity"
+                        android:text="@string/recent_activity"
                         android:textColor="@color/text_primary"
                         android:textSize="18sp"
                         android:textStyle="bold"
@@ -245,7 +246,7 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Item scanned successfully"
+                                android:text="@string/item_scanned_successfully"
                                 android:textColor="@color/text_primary"
                                 android:textSize="14sp"
                                 android:textStyle="bold" />
