@@ -1,5 +1,7 @@
 package com.smartagri.connect.fragments;
 
+import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.GradientDrawable;
@@ -13,16 +15,20 @@ import android.widget.TextView;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.gson.Gson;
 import com.smartagri.connect.BaseFragment;
+import com.smartagri.connect.LoginActivity;
 import com.smartagri.connect.R;
 import com.smartagri.connect.helper.LocaleHelper;
+import com.smartagri.connect.model.User;
 
 public class SettingsFragment extends BaseFragment {
 
     private boolean isOn = false;
-    private boolean isChangingLanguage = false; // Flag to prevent multiple clicks
+    private boolean isChangingLanguage = false;
     ConstraintLayout customSwitch;
-    TextView switchText;
+    TextView switchText, signedUserName, signOut;
 
     public SettingsFragment() {
         // Required empty public constructor
@@ -44,23 +50,37 @@ public class SettingsFragment extends BaseFragment {
 
         customSwitch = view.findViewById(R.id.customSwitch);
         switchText = view.findViewById(R.id.switchText);
+        signedUserName = view.findViewById(R.id.signed_user_name);
+        signOut = view.findViewById(R.id.Signed_Logout);
 
-        // Load current language state when fragment is created
+        // Load current language state
         loadLanguageState();
 
-        customSwitch.setOnClickListener(v -> {
-            // Prevent multiple clicks during language change
-            if (isChangingLanguage) {
-                return;
+        // Show logged in user name
+        SharedPreferences sp = requireActivity().getSharedPreferences("com.smartagri.connect.userdata", Context.MODE_PRIVATE);
+        String userJson = sp.getString("user", null);
+        if (userJson != null) {
+            Gson gson = new Gson();
+            User user = gson.fromJson(userJson, User.class);
+            if (user != null && user.getName() != null) {
+                signedUserName.setText(user.getName());
+            } else {
+                signedUserName.setText("Guest");
             }
+        } else {
+            signedUserName.setText("Guest");
+        }
 
-            isChangingLanguage = true; // Set flag to prevent multiple clicks
+        // Language toggle
+        customSwitch.setOnClickListener(v -> {
+            if (isChangingLanguage) return;
+            isChangingLanguage = true;
             isOn = !isOn;
 
             if (isOn) {
                 switchText.setText("අ");
                 switchText.animate()
-                        .translationX(customSwitch.getWidth() - switchText.getWidth()-18)
+                        .translationX(customSwitch.getWidth() - switchText.getWidth() - 18)
                         .setDuration(200)
                         .start();
 
@@ -69,7 +89,6 @@ public class SettingsFragment extends BaseFragment {
                 drawable.setCornerRadius(50f);
                 customSwitch.setBackground(drawable);
 
-                // Save state before changing language
                 saveSwitchState(true);
                 new Handler().postDelayed(() -> changeLanguage("si"), 300);
 
@@ -81,65 +100,46 @@ public class SettingsFragment extends BaseFragment {
                         .start();
 
                 GradientDrawable drawable = new GradientDrawable();
-                drawable.setColor(0xFF525252); // Dark gray
+                drawable.setColor(0xFF525252); // Gray
                 drawable.setCornerRadius(50f);
                 customSwitch.setBackground(drawable);
 
-                // Save state before changing language
                 saveSwitchState(false);
                 new Handler().postDelayed(() -> changeLanguage("en"), 300);
             }
         });
 
+        // Logout click
+        signOut.setOnClickListener(v -> showLogoutConfirmationDialog());
+
         return view;
     }
 
     private void changeLanguage(String languageCode) {
-        // Update locale
         LocaleHelper.setLocale(requireContext(), languageCode);
-
-        // Restart the entire activity to apply language changes
         Intent intent = requireActivity().getIntent();
         requireActivity().finish();
         startActivity(intent);
-
-        // Add smooth transition
-        requireActivity().overridePendingTransition(
-                android.R.anim.fade_in,
-                android.R.anim.fade_out
-        );
+        requireActivity().overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
     private void loadLanguageState() {
-        // Get current language from LocaleHelper
         String currentLang = LocaleHelper.getLanguage(requireContext());
-
-        // Also check SharedPreferences for the most recent switch state
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(requireContext());
         boolean isSinhalaSelected = prefs.getBoolean("is_sinhala_selected", currentLang.equals("si"));
 
-        // Set switch state based on saved preference
         if (isSinhalaSelected) {
             isOn = true;
             switchText.setText("අ");
-
-            // Set switch position (use post to ensure view is measured)
-            customSwitch.post(() -> {
-                switchText.setTranslationX(customSwitch.getWidth() - switchText.getWidth()-18);
-            });
-
-            // Set background color
+            customSwitch.post(() -> switchText.setTranslationX(customSwitch.getWidth() - switchText.getWidth() - 18));
             GradientDrawable drawable = new GradientDrawable();
             drawable.setColor(0xFF4CC417);
             drawable.setCornerRadius(50f);
             customSwitch.setBackground(drawable);
-
         } else {
             isOn = false;
             switchText.setText("A");
             switchText.setTranslationX(0);
-
-            // Set background color
             GradientDrawable drawable = new GradientDrawable();
             drawable.setColor(0xFF525252);
             drawable.setCornerRadius(50f);
@@ -152,5 +152,33 @@ public class SettingsFragment extends BaseFragment {
         SharedPreferences.Editor editor = prefs.edit();
         editor.putBoolean("is_sinhala_selected", isSinhala);
         editor.apply();
+    }
+
+    private void logout() {
+        // ✅ Sign out from Firebase Authentication
+        FirebaseAuth.getInstance().signOut();
+
+        // ✅ Clear SharedPreferences
+        SharedPreferences sp = requireActivity().getSharedPreferences("com.smartagri.connect.userdata", Context.MODE_PRIVATE);
+        sp.edit().clear().apply();
+
+        // ✅ Redirect to LoginActivity
+        Intent intent = new Intent(requireActivity(), LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
+
+    private void showLogoutConfirmationDialog() {
+        AlertDialog dialog = new AlertDialog.Builder(requireContext())
+                .setTitle("Logout")
+                .setMessage("Are you sure you want to logout?")
+                .setPositiveButton("Yes", (dialogInterface, which) -> logout())
+                .setNegativeButton("Cancel", (dialogInterface, which) -> dialogInterface.dismiss())
+                .show();
+
+        dialog.getButton(AlertDialog.BUTTON_POSITIVE)
+                .setTextColor(getResources().getColor(android.R.color.holo_green_light));
+        dialog.getButton(AlertDialog.BUTTON_NEGATIVE)
+                .setTextColor(getResources().getColor(android.R.color.holo_red_light));
     }
 }

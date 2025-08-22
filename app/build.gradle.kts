@@ -52,7 +52,7 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:34.0.0"))
     implementation("com.google.firebase:firebase-firestore")
     implementation("com.google.firebase:firebase-auth")
-
+    implementation ("com.google.firebase:firebase-database:20.3.0")
     implementation("com.google.guava:guava:31.1-android")
 
     implementation("androidx.core:core-ktx:1.12.0")
@@ -63,7 +63,7 @@ dependencies {
     implementation("androidx.camera:camera-camera2:$cameraxVersion")
     implementation("androidx.camera:camera-lifecycle:$cameraxVersion")
     implementation("androidx.camera:camera-view:$cameraxVersion")
-
+    implementation("com.google.code.gson:gson:2.12.1")
     implementation("androidx.cardview:cardview:1.0.0")
     implementation("com.github.bumptech.glide:glide:4.16.0")
     implementation("org.tensorflow:tensorflow-lite:2.13.0")

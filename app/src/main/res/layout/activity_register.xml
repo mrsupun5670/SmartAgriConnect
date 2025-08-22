@@ -9,7 +9,7 @@
     android:background="@drawable/gradient_overlay">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/main"
+        android:id="@+id/mainlogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp">
@@ -120,14 +120,14 @@
 
         <!-- Login Button -->
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnsaveReport"
+            android:id="@+id/loginbutton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:background="@android:color/transparent"
             android:text="@string/already_have_an_account_login"
             android:textColor="@color/green"
-            app:layout_constraintEnd_toEndOf="@+id/btnRegister"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btnRegister"
             app:strokeColor="@color/green"
